@@ -46,7 +46,9 @@ jobs:
         with:
           build: npm i -D cypress
           command: npm run test:e2e
-          start: npm run start:front, npm run start:test
+          start: |
+            npm run start:test
+            npm run start:front
           wait-on: "http://localhost:3003"
       - name: Deploy to Heroku
         if: "!contains(github.event.head_commit.message, '#skip')"
