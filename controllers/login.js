@@ -31,7 +31,7 @@ loginRouter.post('/', async (request, response) => {
     const token = jwt.sign(userForToken, process.env.SECRET)
 
     // Palautetaan 200 OK -statuskoodi sekä token ja käyttäjäolio.
-    response
+    return response
         .status(200)
         .json({ token, username: user.username, name: user.name })
 })
