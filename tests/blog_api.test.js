@@ -59,6 +59,7 @@ describe('Saving blogs to database:', () => {
             const loggedTester = await api
                 .post('/api/login')
                 .set('Accept', 'application/json')
+                .set('Content-Type', 'application/json')
                 .send(loginInfo)
                 .expect('Content-Type', /application\/json/)
             
@@ -93,6 +94,7 @@ describe('Saving blogs to database:', () => {
             const loggedTester = await api
                 .post('/api/login')
                 .set('Accept', 'application/json')
+                .set('Content-Type', 'application/json')
                 .send(loginInfo)
                 .expect('Content-Type', /application\/json/)
             
@@ -126,6 +128,7 @@ describe('Saving blogs to database:', () => {
             const loggedTester = await api
                 .post('/api/login')
                 .set('Accept', 'application/json')
+                .set('Content-Type', 'application/json')
                 .send(loginInfo)
                 .expect('Content-Type', /application\/json/)
             
@@ -150,6 +153,7 @@ describe('Saving blogs to database:', () => {
             const loggedTester = await api
                 .post('/api/login')
                 .set('Accept', 'application/json')
+                .set('Content-Type', 'application/json')
                 .send(loginInfo)
                 .expect('Content-Type', /application\/json/)
             
@@ -182,6 +186,7 @@ describe('Saving blogs to database:', () => {
             const loggedTester = await api
                 .post('/api/login')
                 .set('Accept', 'application/json')
+                .set('Content-Type', 'application/json')
                 .send(loginInfo)
                 .expect('Content-Type', /application\/json/)
 
