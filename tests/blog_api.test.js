@@ -61,8 +61,7 @@ describe('Saving blogs to database:', () => {
                 .set('Accept', 'application/json')
                 .set('Content-Type', 'application/json')
                 .send(loginInfo)
-
-            console.log(loggedTester)
+                .expect('Content-Type', /application\/json/)
             
             const newBlog = {
                 title: 'Utilizing async/await.',
@@ -97,8 +96,7 @@ describe('Saving blogs to database:', () => {
                 .set('Accept', 'application/json')
                 .set('Content-Type', 'application/json')
                 .send(loginInfo)
-            
-            console.log(loggedTester)
+                .expect('Content-Type', /application\/json/)
             
             const newBlog = {
                 title: 'Who wants likes anyway.',
@@ -132,8 +130,7 @@ describe('Saving blogs to database:', () => {
                 .set('Accept', 'application/json')
                 .set('Content-Type', 'application/json')
                 .send(loginInfo)
-                        
-            console.log(loggedTester)
+                .expect('Content-Type', /application\/json/)
             
             const newBlog = {
                 author: 'Liked Author',
@@ -158,8 +155,7 @@ describe('Saving blogs to database:', () => {
                 .set('Accept', 'application/json')
                 .set('Content-Type', 'application/json')
                 .send(loginInfo)
-                        
-            console.log(loggedTester)
+                .expect('Content-Type', /application\/json/)
             
             const unsavedBlog = {
                 title: 'I want to be saved to database.',
@@ -192,8 +188,7 @@ describe('Saving blogs to database:', () => {
                 .set('Accept', 'application/json')
                 .set('Content-Type', 'application/json')
                 .send(loginInfo)
-            
-            console.log(loggedTester)
+                .expect('Content-Type', /application\/json/)
             
             const blogsAtStart = await helper.blogsInDatabase()
             const blogToDelete = blogsAtStart[0]

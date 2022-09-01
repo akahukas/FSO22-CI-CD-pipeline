@@ -44,7 +44,7 @@ jobs:
             cd frontend/
             npm run cypress:open
           start: npm run start:test
-          wait-on: http://localhost:3000/
+          wait-on: http://localhost:3003/
       - name: Deploy to Heroku
         if: "!contains(github.event.head_commit.message, '#skip')"
         uses: akhileshns/heroku-deploy@v3.12.12
