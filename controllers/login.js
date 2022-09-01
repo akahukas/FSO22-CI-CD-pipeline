@@ -33,7 +33,7 @@ loginRouter.post('/', async (request, response) => {
     // Palautetaan 200 OK -statuskoodi sekä token ja käyttäjäolio.
     response
         .status(200)
-        .send({ token, username: user.username, name: user.name })
+        .json({ token, username: user.username, name: user.name })
 })
 
 module.exports = loginRouter
