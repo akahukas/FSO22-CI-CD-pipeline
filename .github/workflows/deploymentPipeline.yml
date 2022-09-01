@@ -40,11 +40,12 @@ jobs:
       - name: e2e tests
         uses: cypress-io/github-action@v4
         with:
-          command: |
-            cd frontend/
-            npm run cypress:open
+          command: npm run test:e2e
           start: npm run start:test
-          wait-on: http://localhost:3003/
+          env:
+            NODE_ENV: test
+            PORT: ${{secrets.PORT}}
+          wait-on: http://localhost:3003
       - name: Deploy to Heroku
         if: "!contains(github.event.head_commit.message, '#skip')"
         uses: akhileshns/heroku-deploy@v3.12.12
