@@ -11,6 +11,8 @@ on:
 env:
   NODE_ENV: test
   PORT: ${{secrets.PORT}}
+  TEST_MONGODB_URI: ${{secrets.TEST_MONGODB_URI}}
+  SECRET: ${{secrets.JWT_SECRET}}
 
 jobs:
   deployment_pipeline:
@@ -39,9 +41,6 @@ jobs:
           cd ..
       - name: test backend
         run: npm run test
-        env:
-          TEST_MONGODB_URI: ${{secrets.TEST_MONGODB_URI}}
-          SECRET: ${{secrets.JWT_SECRET}}
       - name: e2e tests
         uses: cypress-io/github-action@v4
         with:
