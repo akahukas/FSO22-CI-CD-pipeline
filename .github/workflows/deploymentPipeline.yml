@@ -8,6 +8,10 @@ on:
     branches: [master]
     types: [opened, synchronize]
 
+env:
+  NODE_ENV: test
+  PORT: ${{secrets.PORT}}
+
 jobs:
   deployment_pipeline:
     if: ${{ github.event_name == 'push' }}
@@ -42,9 +46,6 @@ jobs:
         with:
           command: npm run test:e2e
           start: npm run start:test
-          env:
-            NODE_ENV: test
-            PORT: ${{secrets.PORT}}
           wait-on: http://localhost:3003
       - name: Deploy to Heroku
         if: "!contains(github.event.head_commit.message, '#skip')"
