@@ -19,6 +19,7 @@ describe('Saving blogs to database:', () => {
 
         await api
             .post('/api/users')
+            .set('Content-Type', 'application/json') 
             .send(testerLogin)
             .expect('Content-Type', /application\/json/)
         
@@ -29,6 +30,7 @@ describe('Saving blogs to database:', () => {
     test('Blogs are returned as JSON.', async () => {
         await api
             .get('/api/blogs')
+            .set('Content-Type', 'application/json') 
             .expect(200)
             .expect('Content-Type', /application\/json/)
     })
@@ -56,6 +58,7 @@ describe('Saving blogs to database:', () => {
 
             const loggedTester = await api
                 .post('/api/login')
+                .set('Content-Type', 'application/json') 
                 .send(loginInfo)
                 .expect('Content-Type', /application\/json/)
             
@@ -69,6 +72,7 @@ describe('Saving blogs to database:', () => {
             await api
                 .post('/api/blogs')
                 .set('Authorization', `bearer ${loggedTester.body.token}`)
+                .set('Content-Type', 'application/json') 
                 .send(newBlog)
                 .expect(201)
                 .expect('Content-Type', /application\/json/)
@@ -88,6 +92,7 @@ describe('Saving blogs to database:', () => {
 
             const loggedTester = await api
                 .post('/api/login')
+                .set('Content-Type', 'application/json') 
                 .send(loginInfo)
                 .expect('Content-Type', /application\/json/)
             
@@ -100,6 +105,7 @@ describe('Saving blogs to database:', () => {
             await api
                 .post('/api/blogs')
                 .set('Authorization', `bearer ${loggedTester.body.token}`)
+                .set('Content-Type', 'application/json') 
                 .send(newBlog)
                 .expect(201)
                 .expect('Content-Type', /application\/json/)
@@ -119,6 +125,7 @@ describe('Saving blogs to database:', () => {
 
             const loggedTester = await api
                 .post('/api/login')
+                .set('Content-Type', 'application/json') 
                 .send(loginInfo)
                 .expect('Content-Type', /application\/json/)
             
@@ -142,6 +149,7 @@ describe('Saving blogs to database:', () => {
 
             const loggedTester = await api
                 .post('/api/login')
+                .set('Content-Type', 'application/json') 
                 .send(loginInfo)
                 .expect('Content-Type', /application\/json/)
             
@@ -173,6 +181,7 @@ describe('Saving blogs to database:', () => {
 
             const loggedTester = await api
                 .post('/api/login')
+                .set('Content-Type', 'application/json')
                 .send(loginInfo)
                 .expect('Content-Type', /application\/json/)
 
