@@ -62,7 +62,7 @@ describe('Saving blogs to database:', () => {
                 .set('Content-Type', 'application/json')
                 .send(loginInfo)
 
-            console.log(loggedTester.body)
+            console.log(loggedTester)
             
             const newBlog = {
                 title: 'Utilizing async/await.',
@@ -98,7 +98,7 @@ describe('Saving blogs to database:', () => {
                 .set('Content-Type', 'application/json')
                 .send(loginInfo)
             
-            console.log(loggedTester.body)
+            console.log(loggedTester)
             
             const newBlog = {
                 title: 'Who wants likes anyway.',
@@ -133,7 +133,7 @@ describe('Saving blogs to database:', () => {
                 .set('Content-Type', 'application/json')
                 .send(loginInfo)
                         
-            console.log(loggedTester.body)
+            console.log(loggedTester)
             
             const newBlog = {
                 author: 'Liked Author',
@@ -159,7 +159,7 @@ describe('Saving blogs to database:', () => {
                 .set('Content-Type', 'application/json')
                 .send(loginInfo)
                         
-            console.log(loggedTester.body)
+            console.log(loggedTester)
             
             const unsavedBlog = {
                 title: 'I want to be saved to database.',
@@ -193,7 +193,7 @@ describe('Saving blogs to database:', () => {
                 .set('Content-Type', 'application/json')
                 .send(loginInfo)
             
-            console.log(loggedTester.body)
+            console.log(loggedTester)
             
             const blogsAtStart = await helper.blogsInDatabase()
             const blogToDelete = blogsAtStart[0]
