@@ -181,12 +181,12 @@ describe('Blog app', function () {
 
       // Tarkastetaan, että sivulla ylimpänä eniten tykkäyksiä
       // saanut blogi. Lisäksi tarkastetaan tykkäysten oikeat määrät.
-      cy.get('.blog').eq(0).contains('Creating from Cypress.')
-      cy.get('.blog').eq(0).contains('likes 3', { timeout: 10000 })
-      cy.get('.blog').eq(1).contains('Another Cypress Blog.')
-      cy.get('.blog').eq(1).contains('likes 2', { timeout: 10000 })
       cy.get('.blog').eq(2).contains('Third Cypress Blog.')
       cy.get('.blog').eq(2).contains('likes 1', { timeout: 10000 })
+      cy.get('.blog').eq(1).contains('Another Cypress Blog.')
+      cy.get('.blog').eq(1).contains('likes 2', { timeout: 10000 })
+      cy.get('.blog').eq(0).contains('Creating from Cypress.')
+      cy.get('.blog').eq(0).contains('likes 3', { timeout: 10000 })
     })
   })
 })
