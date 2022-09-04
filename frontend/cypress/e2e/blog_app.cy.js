@@ -82,11 +82,10 @@ describe('Blog app', function () {
         author: 'Mr. Cypress',
         url: 'http://mrcypress.com/another'
       })
-
-      cy.visit('http://localhost:3003')
     })
 
     it('a like can be added to one of the blogs.', function() {
+      cy.visit('http://localhost:3003')
 
       cy.contains('Another Cypress Blog.').get('#viewButton').click()
 
@@ -96,6 +95,8 @@ describe('Blog app', function () {
     })
 
     it('a blog can be deleted by logged in user.', function() {
+      cy.visit('http://localhost:3003')
+
       cy.get('#blogList').contains('Another Cypress Blog.')
       cy.contains('Another Cypress Blog.').get('#viewButton').click()
 
@@ -104,6 +105,8 @@ describe('Blog app', function () {
     })
 
     it('a blog can not be deleted by user who did not create the blog', function() {
+      cy.visit('http://localhost:3003')
+
       cy.login({ username: 'e2ehelper', password: 'alsoSecurePassword' })
 
       cy.get('#blogList').contains('Another Cypress Blog.')
