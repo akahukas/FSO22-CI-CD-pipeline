@@ -18,7 +18,7 @@ describe('Blog app', function () {
     cy.request('POST', 'http://localhost:3003/api/users', anotherUser)
 
     // Palataan aloitussivulle.
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3003')
   })
 
   it('Login form is shown.', function() {
@@ -99,8 +99,7 @@ describe('Blog app', function () {
     })
 
     it('a blog can not be deleted by user who did not create the blog', function() {
-      cy.get('#logoutButton').click()
-      cy.visit('http://localhost:3000')
+      cy.visit('http://localhost:3003')
       cy.login({ username: 'e2ehelper', password: 'alsoSecurePassword' })
 
       cy.get('#blogList').contains('Another Cypress Blog.')
