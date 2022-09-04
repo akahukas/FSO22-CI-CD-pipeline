@@ -76,16 +76,18 @@ describe('Blog app', function () {
     beforeEach(function() {
       // Kirjaudutaan sisälle ja luodaan testiblogi.
       cy.login({ username: 'e2etester', password: 'securePassword' })
-      cy.visit('http://localhost:3003')
+
       cy.createBlog({
         title: 'Another Cypress Blog.',
         author: 'Mr. Cypress',
         url: 'http://mrcypress.com/another'
       })
+
       cy.visit('http://localhost:3003')
     })
 
     it('a like can be added to one of the blogs.', function() {
+
       cy.contains('Another Cypress Blog.').get('#viewButton').click()
 
       cy.get('#likes').contains(0)
