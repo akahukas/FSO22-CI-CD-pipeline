@@ -50,7 +50,7 @@ jobs:
           wait-on: "http://localhost:3003"
           record: true
         env:
-          CYPRESS_KEY: ${{secrets.CYPRESS_KEY}}
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_KEY}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Deploy to Heroku
         if: "!contains(github.event.head_commit.message, '#skip')"
