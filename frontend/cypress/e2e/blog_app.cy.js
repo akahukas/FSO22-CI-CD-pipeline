@@ -169,15 +169,18 @@ describe('Blog app', function () {
       cy.get('@firstLikeButton').click()
       cy.wait(250)
       cy.get('@firstLikeButton').click()
+      cy.wait(250)
 
       // Lisätään toiselle blogille kaksi tykkäystä,
       // ja odotetaan tykkäysten vastauksen rekisteröitymistä.
       cy.get('@secondLikeButton').click()
       cy.wait(250)
       cy.get('@secondLikeButton').click()
+      cy.wait(250)
 
       // Lisätään niin ikään viimeiselle blogille tykkäys.
       cy.get('@thirdLikeButton').click()
+      cy.wait(250)
 
       // Tarkastetaan, että sivulla ylimpänä eniten tykkäyksiä
       // saanut blogi. Lisäksi tarkastetaan tykkäysten oikeat määrät.
