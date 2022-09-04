@@ -48,6 +48,10 @@ jobs:
           command: npm run test:e2e
           start: npm run start:test
           wait-on: "http://localhost:3003"
+          record: true
+        env:
+          CYPRESS_KEY: ${{secrets.CYPRESS_KEY}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Deploy to Heroku
         if: "!contains(github.event.head_commit.message, '#skip')"
         uses: akhileshns/heroku-deploy@v3.12.12
