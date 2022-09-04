@@ -165,22 +165,22 @@ describe('Blog app', function () {
       // odotetaan vastauksen rekisteröitymistä kunkin
       // painalluksen jälkeen 250 millisekuntia.
       cy.get('@firstLikeButton').click()
-      cy.wait(250)
+      cy.wait(1000)
       cy.get('@firstLikeButton').click()
-      cy.wait(250)
+      cy.wait(1000)
       cy.get('@firstLikeButton').click()
-      cy.wait(250)
+      cy.wait(500)
 
       // Lisätään toiselle blogille kaksi tykkäystä,
       // ja odotetaan tykkäysten vastauksen rekisteröitymistä.
       cy.get('@secondLikeButton').click()
-      cy.wait(250)
+      cy.wait(1000)
       cy.get('@secondLikeButton').click()
-      cy.wait(250)
+      cy.wait(500)
 
       // Lisätään niin ikään viimeiselle blogille tykkäys.
       cy.get('@thirdLikeButton').click()
-      cy.wait(250)
+      cy.wait(500)
 
       // Tarkastetaan, että sivulla ylimpänä eniten tykkäyksiä
       // saanut blogi. Lisäksi tarkastetaan tykkäysten oikeat määrät.
