@@ -48,6 +48,10 @@ const Blog = ({ blog, handleLike , checkCorrectUser, remove }) => {
     })
   }
 
+  if (!blog.user.name) {
+    return
+  }
+
   return (
     <div className='blog' style={blogStyle}>
       <div className='titleAndAuthor'>
