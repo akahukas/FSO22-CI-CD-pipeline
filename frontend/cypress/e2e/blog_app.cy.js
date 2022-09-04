@@ -119,6 +119,7 @@ describe('Blog app', function () {
         author: 'Mr. Cypress',
         url: 'http://mrcypress.com/third'
       })
+      cy.visit('http://localhost:3003')
 
       // Haetaan ensimmäisen blogin <view>-painike ja painetaan sitä.
       cy.contains('Creating from Cypress.').parent().find('button').as('firstButton')
