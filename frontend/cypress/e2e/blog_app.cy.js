@@ -80,6 +80,7 @@ describe('Blog app', function () {
         author: 'Mr. Cypress',
         url: 'http://mrcypress.com/another'
       })
+      cy.visit('http://localhost:3003')
     })
 
     it('a like can be added to one of the blogs.', function() {
@@ -99,7 +100,6 @@ describe('Blog app', function () {
     })
 
     it('a blog can not be deleted by user who did not create the blog', function() {
-      cy.visit('http://localhost:3003')
       cy.login({ username: 'e2ehelper', password: 'alsoSecurePassword' })
 
       cy.get('#blogList').contains('Another Cypress Blog.')
