@@ -49,6 +49,7 @@ describe('Blog app', function () {
     beforeEach(function() {
       // Kirjaudutaan sisään sivulle.
       cy.login({ username: 'e2etester', password: 'securePassword' })
+      cy.visit('http://localhost:3003')
     })
 
     it('a blog can be created.', function() {
@@ -75,6 +76,7 @@ describe('Blog app', function () {
     beforeEach(function() {
       // Kirjaudutaan sisälle ja luodaan testiblogi.
       cy.login({ username: 'e2etester', password: 'securePassword' })
+      cy.visit('http://localhost:3003')
       cy.createBlog({
         title: 'Another Cypress Blog.',
         author: 'Mr. Cypress',

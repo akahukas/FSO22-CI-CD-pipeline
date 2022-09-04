@@ -15,7 +15,6 @@ Cypress.Commands.add('login', ({ username, password }) => {
     username, password
   }).then(({ body }) => {
     window.localStorage.setItem('loggedBlogAppUser', JSON.stringify(body))
-    cy.visit('http://localhost:3003')
   })
 })
 
